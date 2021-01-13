@@ -8,8 +8,7 @@ import java.util.List;
 public class Demo11Deserialization {
 
 	public static void main(String[] args) {
-		try (FileInputStream file = new FileInputStream(
-				"resources/demo.ser");
+		try (FileInputStream file = new FileInputStream("resources/demo.ser");
 		     ObjectInputStream in = new ObjectInputStream(file)) {
 			Student student = (Student) in.readObject();
 			System.out.println(student.getName());
