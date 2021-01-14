@@ -24,13 +24,12 @@ public class Spaarrekening implements Serializable {
     public static void main(String[] args) {
         Spaarrekening spaarrekening = new Spaarrekening(100, "mehmet cin", "BE97 1630 3834");
 
-        /*try (FileOutputStream file = new FileOutputStream("resources/bank.ser");
-             ObjectOutputStream out = new ObjectOutputStream(file)) {
+        try (FileOutputStream file = new FileOutputStream("resources/bank.ser");  ObjectOutputStream out = new ObjectOutputStream(file)){
             out.writeObject(spaarrekening);
-        } catch (IOException ex) {
+        }catch (IOException ex) {
             System.out.println(ex.getMessage ());
-        }*/
-
+        }
+        //in try () zodat de file access autocloseable is.
         // Deserialisatie
         try {
             FileInputStream file = new FileInputStream("resources/bank.ser");
